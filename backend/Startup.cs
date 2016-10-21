@@ -38,6 +38,7 @@ namespace backend
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            app.UseStaticFiles();
         }
     }
 }
