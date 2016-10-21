@@ -17,3 +17,9 @@
 
 ### Demo Url ###
 * Please watch this space for a demo url
+
+### To Setup Development ###
+* Open Visual Studio Code and point to front end directory
+* Open another instance of Visual Studio Code and point to backend directory
+* You can run/debug backend directly from visual studio code
+* You can run ng serve from front end directory to start frontend
