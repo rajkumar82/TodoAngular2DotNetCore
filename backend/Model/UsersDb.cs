@@ -5,7 +5,15 @@ using System.IO;
 namespace backend.model{
     public class UsersDb{
 
-        public UsersDb()
+        private static UsersDb instance;
+        public static UsersDb Instance {
+            get{
+                if(instance == null)
+                instance = new UsersDb();
+                return instance;
+            }
+        }
+        protected UsersDb()
         {
             _mapuserToDb = new Dictionary<string,UserDb>();
         }
@@ -18,9 +26,16 @@ namespace backend.model{
         }
 
         public IEnumerable<string> Users{
+
             get{
+                var users = new List<string>();
                 var dirs = Directory.GetDirectories(this.BaseDir);
-                return dirs;
+                foreach(var dir in dirs)
+                    {
+                        var di = new DirectoryInfo(dir);
+                        users.Add(di.Name);
+                    }
+                return users;
             }
         }
 
