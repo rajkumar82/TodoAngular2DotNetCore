@@ -12,5 +12,18 @@ namespace backend.Controllers
         {
             return UsersDb.Instance.Users;
         }
+
+        [HttpGet("{name}")]
+        public UserDb GetUser(string name)
+        {
+            return UsersDb.Instance.GetUser(name);
+        }
+
+        [HttpPost("{name}")]
+        public bool AddUser(string name)
+        {
+            UsersDb.Instance.AddUser(name);
+            return true;
+        }
     }
 }
