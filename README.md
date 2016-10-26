@@ -6,6 +6,7 @@
 * Learning development of a project (TODO app) using Angular2 CLI and Dot net Core
 * Understand best practices to be followed for development, and deployment
 * To develop a fully usable todo app to manage daily tasks 
+* https://todoist.com/ 
 
 
 ### How do I get set up? ###
