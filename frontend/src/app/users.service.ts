@@ -9,7 +9,7 @@ export class UsersService {
 
   public getUsers()
   {
-    var url = "http://localhost:5000/api/Users";
+    var url = "http://localhost:5985/api/Users";
       return (<any>this.http.get(url)).map(
             res => res.json()
         );
