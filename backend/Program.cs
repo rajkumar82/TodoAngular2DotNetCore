@@ -24,6 +24,7 @@ namespace backend
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:5985/")
                 .Build();
 
             host.Run();

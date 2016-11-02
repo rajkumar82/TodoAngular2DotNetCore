@@ -1,0 +1,7 @@
+sudo service supervisor stop
+
+sudo rm -R /usr/apps/todoapp
+sudo 7z x /usr/apps/release/release.7z -o/usr/apps/todoapp/ 
+sudo chmod -R 777 /usr/apps/todoapp
+
+sudo service supervisor start
