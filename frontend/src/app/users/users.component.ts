@@ -1,34 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { UsersService } from '../users.service';
-import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit, AfterViewInit {
 
-  Users : Array<string> = new Array<string>();
-  constructor(private usersservice : UsersService) { }
+  Users: Array<string> = new Array<string>();
+  constructor(private usersservice: UsersService) { }
 
   ngOnInit() {
-    
   }
 
-  ngAfterViewInit()
-  {
-    var me = this;
+  ngAfterViewInit() {
+    let me = this;
     this.usersservice.getUsers().subscribe(
-      data => 
-      {
+      data => {
           me.Users = data;
       }
     );
   }
 
-  rowClick(event)
-  {
+  rowClick(event) {
       alert(event);
   }
 

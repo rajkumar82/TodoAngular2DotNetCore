@@ -5,19 +5,20 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UsersService } from './users.service';
-import { TodoListComponent } from './todo-list/todo-list.component'
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { DragulaModule, DragulaService } from 'ng2-dragula/ng2-dragula';
 
 @NgModule({
   declarations: [
-    AppComponent,    
-    UsersComponent, TodoListComponent
+    AppComponent, UsersComponent, TodoListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    DragulaModule
   ],
-  providers: [UsersService],
+  providers: [UsersService, DragulaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
