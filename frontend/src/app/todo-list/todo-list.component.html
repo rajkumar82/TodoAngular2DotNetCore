@@ -1,22 +1,51 @@
-
 <div class="parent outertodo">    
+
+    <div class="userheader">
+        <div class="links">    
+            <i class="fa fa-home" (click)="GoHome()"></i>
+            <i class="fa fa-plus" (click)="AddTask()"></i>
+        </div>  
+    <div class="listname">
+        <i class="fa fa-user"></i>
+        {{Username}}
+    </div>
+
+</div>
+
+
     <div class="wrapper mainparent">
     <div>
+
       <div class="headlane1">
-        <div class="heading">backlog</div>
+        <div class="heading">
+            <i class="fa fa-list"></i>
+            Backlog
+        </div>
       </div>
       
-      <div class="headlane2">
-        <div class="heading">in progress</div>
+      <div class="headlane2">          
+        <div class="heading">
+            <i class="fa fa-tasks"></i>
+            Progress</div>
        </div>
       
       <div class="headlane2">
-        <div class="heading">done</div>
+        <div class="heading">            
+            <i class="fa fa-check"></i>
+            Done
+        </div>
       </div>
 
     </div>
         <div class="container swimlane1" [dragula]="'second-bag'">          
-            <div class="item noselect">One </div>
+            <div class="item noselect">
+            
+            <i class="fa fa-file-text-o"></i>
+            
+
+                One 
+                
+            </div>
             <div class="item noselect">Two </div>
             <div class="item noselect">Three </div>
             <div class="item noselect">Four </div>

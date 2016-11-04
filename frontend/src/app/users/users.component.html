@@ -1,20 +1,18 @@
 
- <table>
+<div class="usersdiv">
+
+<table>
 
   <tr>
-
     <th>#</th>
-
     <th>Users</th>
-
   </tr>
 
-  <tr *ngFor="let user of Users; let i = index" (click)="rowClick(i+1)">
-
+  <tr *ngFor="let user of Users; let i = index" (click)="rowClick(user)">
     <td>{{i + 1}}</td>
-
     <td>{{user}}</td>
-
   </tr>
 
 </table>
+
+</div>

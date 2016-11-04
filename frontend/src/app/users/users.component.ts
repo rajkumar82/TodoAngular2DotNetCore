@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router, ActivatedRoute }       from '@angular/router';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -9,7 +10,9 @@ import { UsersService } from '../users.service';
 export class UsersComponent implements OnInit, AfterViewInit {
 
   Users: Array<string> = new Array<string>();
-  constructor(private usersservice: UsersService) { }
+  constructor(private route: ActivatedRoute,
+        private router: Router,
+        private usersservice: UsersService) { }
 
   ngOnInit() {
   }
@@ -23,8 +26,8 @@ export class UsersComponent implements OnInit, AfterViewInit {
     );
   }
 
-  rowClick(event) {
-      alert(event);
+  rowClick(user: string) {
+      this.router.navigate(['/todo/' + user]);
   }
 
 }
