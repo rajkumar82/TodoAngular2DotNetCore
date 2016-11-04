@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, Params }       from '@angular/router';
 import { TodoService } from '../services/todo.service';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
@@ -9,7 +9,7 @@ import { Task } from '../common/task';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css']
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent implements OnInit, OnDestroy {
 
   public Username: string;
 
@@ -77,6 +77,10 @@ export class TodoListComponent implements OnInit {
 
   }
 
+  ngOnDestroy() {
+      this.dragulaService.destroy('bag');
+  }
+
   GetTasksForUser(user: string) {
     // going to get the tasks for a user
   }
@@ -114,7 +118,7 @@ export class TodoListComponent implements OnInit {
   private onDrop(args) {
     let [e, el] = args;
     // do something    
-    console.log("" + this.backlog.length);
+    console.log('' + this.backlog.length);
   }
 
   private onOver(args) {
