@@ -16,8 +16,7 @@
       "mobile": false,
       "styles": [
         "styles.css",
-        "../node_modules/ng2-dragula/demo/assets/css/dragula.min.css",
-        "../node_modules/ng2-dragula/demo/assets/css/example.css"
+        "../node_modules/ng2-dragula/demo/assets/css/dragula.min.css"
       ],
       "scripts": [
       ],

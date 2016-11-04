@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http'
-import { Observable } from 'rxjs/Rx';
+import { Http } from '@angular/http';
 import 'rxjs/Rx';
+import {Common} from './common/common';
+
 @Injectable()
 export class UsersService {
 
   constructor(private http: Http) { }
 
-  public getUsers()
-  {
-    var url = "http://localhost:5985/api/Users";
-      return (<any>this.http.get(url)).map(
+  public getUsers() {
+      return (<any>this.http.get(Common.GetAllUsersUrl)).map(
             res => res.json()
         );
   }
-
 }
+
