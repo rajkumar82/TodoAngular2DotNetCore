@@ -10,12 +10,12 @@ mkdir ..\publish\database\admin
 :Copy frontend
 
 cd ..\frontend
-call npm install
+:call npm install
 call ng build --prod --output-path ..\publish\wwwroot
 
 
 :Zip everything
-"c:\Program Files\7-Zip\7z.exe" a -r -t7z ..\release.7z ..\publish\*.*
+"c:\Program Files\7-Zip\7z.exe" a -r -t7z ..\todoangulardotnetcore.7z ..\publish\*.*
 
 :cleanup
 rmdir ..\publish /S /Q
@@ -25,7 +25,11 @@ rmdir ..\publish /S /Q
 :Extract tools
 "c:\Program Files\7-Zip\7z.exe" x ..\build\tools.7z -o..\build
 
-:..\build\tools\pscp.exe -i "C:\pscp\Alfadock_Linux.ppk" "..\release.7z" ubuntu@52.199.13.255:/usr/apps/release
+..\build\tools\pscp.exe -i "c:\Rajkumar\Github\Aws\rajkumar_aws.ppk" "..\todoangulardotnetcore.7z" ubuntu@35.154.11.173:/var/apps
 
 :Deploy
-:..\build\tools\putty.exe -ssh ubuntu@52.199.13.255 -i "C:\pscp\Alfadock_Linux.ppk" -m "..\build\deploy.txt"
+..\build\tools\putty.exe -ssh ubuntu@35.154.11.173 -i "c:\Rajkumar\Github\Aws\rajkumar_aws.ppk" -m "..\build\deploy.txt"
+
+rmdir ..\build\tools /S /Q
+
+cd ..\build

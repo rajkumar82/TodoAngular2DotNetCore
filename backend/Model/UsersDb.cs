@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -14,14 +15,17 @@ namespace backend.model{
             }
         }
         protected UsersDb()
-        {
+        {            
+            var dir = Path.GetDirectoryName(Directory.GetCurrentDirectory());
+            _basedir = Path.Combine(dir,"todoangulardotnetcoredb");
             _mapuserToDb = new Dictionary<string,UserDb>();
         }
 
+        private string _basedir;
+
         public string BaseDir {
-            get{
-                var dir = Directory.GetCurrentDirectory();
-                return Path.Combine(dir,"database");
+            get{                                
+                return _basedir;
             }
         }
 
