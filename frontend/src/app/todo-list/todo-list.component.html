@@ -26,7 +26,8 @@
       <div class="headlane2">          
         <div class="heading">
             <i class="fa fa-tasks"></i>
-            Progress</div>
+            Progress            
+        </div>
        </div>
       
       <div class="headlane2">
@@ -37,30 +38,38 @@
       </div>
 
     </div>
-        <div class="container swimlane1" [dragula]="'second-bag'">          
-            <div class="item noselect">
+        <div class="container swimlane1" [dragula]="'bag'" [dragulaModel]='backlog'>          
             
-            <i class="fa fa-file-text-o"></i>
-            
-
-                One 
-                
+            <div *ngFor="let item of backlog" class="item noselect" >            
+                <i class="fa fa-file-text-o">
+                </i>
+                <span>
+                    {{item.Description}}
+                </span>                
             </div>
-            <div class="item noselect">Two </div>
-            <div class="item noselect">Three </div>
-            <div class="item noselect">Four </div>
+            
         </div>
-        <div class="container swimlane2" [dragula]="'second-bag'">
-            <div class="item noselect">Five </div>
-           <div class="item noselect">Six </div>
-            <div class="item noselect">Seven </div>
-            <div class="item noselect">Eight </div>
+        <div class="container swimlane2" [dragula]="'bag'" [dragulaModel]='progress'>
+
+            <div *ngFor="let item of progress" class="item noselect" >            
+                <i class="fa fa-file-text-o">
+                </i>
+                <span>
+                    {{item.Description}}
+                </span>                
+            </div>
+
         </div>
-        <div class="container swimlane2" [dragula]="'second-bag'">
-            <div class="item noselect">easy </div>
-            <div class="item noselect">one </div>
-            <div class="item noselect">to </div>
-            <div class="item noselect">do </div>
+        <div class="container swimlane2" [dragula]="'bag'" [dragulaModel]='completed'>
+           
+           <div *ngFor="let item of completed" class="item noselect" >            
+                <i class="fa fa-file-text-o">
+                </i>
+                <span>
+                    {{item.Description}}
+                </span>                
+            </div> 
+
         </div>
     </div>    
 </div>

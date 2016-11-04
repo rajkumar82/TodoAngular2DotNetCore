@@ -5,7 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
-import { UsersService } from './users.service';
+import { UsersService } from './services/users.service';
+import { TodoService } from './services/todo.service';
 import { TodoListComponent } from './todo-list/todo-list.component';
 
 import { DragulaModule, DragulaService } from 'ng2-dragula/ng2-dragula';
@@ -33,7 +34,7 @@ import { DragulaModule, DragulaService } from 'ng2-dragula/ng2-dragula';
             }
         ], { useHash: true })
   ],
-  providers: [UsersService, DragulaService],
+  providers: [UsersService, DragulaService,TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

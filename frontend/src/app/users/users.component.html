@@ -1,11 +1,12 @@
 
 <div class="usersdiv">
 
-<table>
+<h2>Please click on a user to view tasks. </h2>
 
+<table>
   <tr>
     <th>#</th>
-    <th>Users</th>
+    <th><i class="fa fa-user"></i> Users</th>
   </tr>
 
   <tr *ngFor="let user of Users; let i = index" (click)="rowClick(user)">
