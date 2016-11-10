@@ -17,7 +17,7 @@
 * Install Visual Studio Code
 
 ### Demo Url ###
-* Please watch this space for a demo url
+* http://rrajkumar.in/index.html
 
 ### To Setup Development ###
 * Open Visual Studio Code and point to front end directory
